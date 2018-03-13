@@ -29,8 +29,21 @@ def hello():
     print("hello")
 ```
 
-#### Argumenty funkcji
+#### Komentarze
+By ułatwić szytelność kodu stosuje się komentarze. W Pythonie komentarz jednolinowy zapisuje się przez znak # na początku komentowanej linii. Natomiast aby utworzyć komentarz wieloliniowy należy użyć potrónych cudzysłowiów.
+```Python
+def shout(word):
+    """
+    komentarz wieloliniowy
+    """
+    # komentarz jednoliniowy
+    print(word + "!")
 
+shout("spam")
+```
+
+#### Argumenty funkcji
+Argumenty funkcji używane sa jak zmienne w ciele funkcji i nie mogą być użyte poza nią to samo dotyczy amiennych utworzonych wewnątrz funkcji.
 ```Python
 def print_with_exclamation(word):
     print(word + "!")
@@ -47,22 +60,17 @@ def print_sum_twice(x, y):
 
 print_sum_twice(2, 5)
 ```
-
+Poniższa funkcja w swoim ciele uzywa parametru `var` który poza ciałem funkcji nie jest dostępny oznacza to, że te zmienne są lokalne
 ```Python
 def function(var):
     var += 1
     print(var)
 
-
 function(7)
+print(var)
 ```
-
-
-# print(var)
-# zmienne będące parametrami funkcji bądź znjadujące się w jej ciele nie są
-# dostępne poza funkcją oznacza to że są one zmiennymi lokalnymi
-
-# zwracanie wartości z funkcji
+#### zwracanie wartości z funkcji
+Pewne funkcje takie jak `int` lub `str` zwracają wartość która może być użyta później. Aby funkcja mogła zwracać wartość musi zawierać słowo kluczowe `return`.
 ```Python
 def max(x, y):
     if x >= y:
@@ -70,38 +78,21 @@ def max(x, y):
     else:
         return y
 
-
 print(max(4, 6))
 z = max(9, 3)
 print(z)
 ```
-
+Gdy na pewnym poziomie zagnierzdzenia kodu znajduje się słowo kluczowe `return` żadna z instrukcji ktora zostanie napisana potem nie zostanie wykonana.
 ```Python
 def add_numbers(x, y):
     sum = x + y
     return sum
     print("Ten napis nie wyświetli się")
 
-
 print(add_numbers(4, 5))
 ```
-
-
-# komentarze
-```Python
-def shout(word):
-    """
-    komentarz wieloliniowy
-    """
-    # komentarz jednoliniowy
-    print(word + "!")
-
-
-shout("spam")
-```
-
-
-# funkcje jako obiekty
+#### Funkcje jako obiekty
+Chociaż są one tworzone inaczej niż normalne zmienne, funkcje są jak każda inna wartość. Można je przypisywać i nadpisywać do zmiennych, a następnie wywoływać ich nazwy.
 ```Python
 def multiply(x, y):
     return x * y
@@ -112,9 +103,8 @@ operation = multiply
 print(operation(a, b))
 ```
 
-
-# funkcja jako argument innnej funkcji
-
+#### Funkcja jako argument innnej funkcji
+Poniżej przedstawiony został przykład jak do jednej z funkcji jako parametr podac inną funkcję
 ```Python
 def add(x, y):
     return x + y
@@ -127,7 +117,7 @@ b = 10
 print(do_twice(add, a, b))
 ```
 
-# moduły
+#### Moduły
 ```Python
 import random
 
