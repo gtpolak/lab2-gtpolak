@@ -125,46 +125,36 @@ for i in range(5):
     val = random.randint(1, 6)
     print(val)
 ```
-# rama aby zaimportowac wszystkie objetky z modułu należy wykożystać  * np from math import *
+> Aby zaimportowac wszystkie objetky z modułu należy wykożystać  * np from math import *
 ```Python
 from math import pi
 
 print(pi)
 ```
+Jeśli wystąpi próba impotu modułu który nie jest dostępny np. `import dowolny_modul` generowany jest wyjątek ImportError 
 
-# import dowolny_modul
-# generowany jest wyjątek ImportError ponieważ tai moduł nie jest dostępny
+Imortowane moduły lub wybrane obiekty w nich zawarte można używać pod inną nazwą porzy pomocy definiowania dla nich słów kluczowych przy użyciu operatora `as`
 ```Python
 from math import sqrt as square_root
 
 print(square_root(100))
 ```
 
-# występuje 3 główne rodzajemodułów w pythonie, npaisane przez programistę, instalowane z dodatkowych źródeł oraz instalowane łącznie z pythonem
-# wywoływany wcześniej moduł znajduje się w standardowych bibliotekach Pythona który posiada wiele użytecznych modulów.
-# niektóre z nich umożliwiaja oreacje na stringach, obiektach dat operacje matematyczne, obsługi plików json, działania na wielu watkach
-#  i wiele innych
-# wiele z dodatkowych modułów do Pythona znajduje się w PyPI (Python Package Index) aby w prosty sposób móc doinstalowac jakiś moduł
-# który jest potrzebny nalezy wykożystać program zwany pip. Aby zainstalowac interesy=ujący moduł wystarczy przejść do
-# wiersza poleceń i wpisac komędę pip install nazwa_biblioteki.
-# po jej zainstalowaniu mozna już swobodnie wykożystać jej możliwosci we własnym kodzie
+W Pythonie występuje 3 główne rodzaje modułów, npaisane przez programistę, instalowane z dodatkowych źródeł oraz instalowane łącznie z Pythonem. Wywoływane wcześniej moduły znajdują się w standardowych bibliotekach Pythona. Python posiada wiele użytecznych modulów  niektóre z nich umożliwiaja oreacje na stringach, obiektach dat operacje matematyczne, obsługi formatu json, działania na wielu watkach i wiele innych.
+Wiele z dodatkowych modułów do Pythona znajduje się w PyPI (Python Package Index) aby w prosty sposób móc doinstalowac jakiś moduł który jest potrzebny nalezy wykożystać program zwany `pip`. Aby zainstalowac interesujący moduł wystarczy przejść do wiersza poleceń i wpisac komędę `pip install nazwa_biblioteki`, po jej zainstalowaniu mozna już swobodnie wykożystać jej możliwosci we własnym kodzie.
 
 
-# błędy
-# Błędy informują użytkownika o tym że coś poszło nie tak. gdy wykrywany jest jkiś błąd program natychmiast się zatrzymuje
-# jednym z cześtrzych błędów jest błąd dotyczący dzieelnia przez 0 i jest nim ZeroDevisionError
-# innymi często występującymi błędami są
-# ImportError
-# IndexError
-# NameError
-# SyntaxError
-# TypeError
-# ValueError
+#### błędy
+Błędy informują użytkownika o tym, że coś poszło nie tak. gdy wykrywany jest błąd program natychmiast się zatrzymuje jednym z częstrzych błędów jest błąd dotyczący dzielenia przez 0 i jest nim `ZeroDevisionError`
+innymi często występującymi błędami są
+`ImportError`
+`IndexError`
+`NameError`
+`SyntaxError`
+`TypeError`
+`ValueError`
 
-# aby przechwycić występujący wyjątek wykorzystuje się instrukcje try/except
-# blok try może mieć wiele różnych bloków except aby wyłapywac różne rodzaje błędów/
-
-# różne rodzaje błędów mogą być także umieszczone w jednym bloku except aby wyłapywać wszystkie z nich
+W celu obsługi wyjątku który może wystąpić wykorzystuje się instrukcje `try/except`. Blok `try` może mieć wiele różnych bloków `except` aby wyłapywać różne rodzaje błędów. Różne rodzaje błędów mogą być także umieszczone w jednym bloku except aby wyłapywać wszystkie z nich.
 ```Python
 try:
     var = 100
@@ -175,8 +165,7 @@ except ZeroDivisionError:
 except (ValueError, TypeError):
     print("jakiś błąd")
 ```
-# możliwy jest też zapis bloku exception bez informacji o jkaimkolwiek konkretnym błędzie
-# można w ten sposób przechwycić wszystkie błędy jakie mogą wystąpić i wykonać dla nich tę samą akcję
+Możliwy jest też zapis bloku exception bez informacji o jkaimkolwiek konkretnym błędzie można w ten sposób przechwycić wszystkie błędy jakie mogą wystąpić i wykonać dla nich tę samą akcję.
 ```Python
 try:
     word = "spam"
