@@ -1,6 +1,5 @@
 # Język skryptowy lab2
 ### Funkcje
-#### Funkcje
 
 Pewne funkcje użyte zostały już we wcześniejszej lekcji była nią np. funkcja `print()`. Były to gotowe funkcje dostarczone wraz z bibliotekami Pythona.
 ```Python
@@ -30,7 +29,7 @@ def hello():
     print("hello")
 ```
 
-#### Komentarze
+### Komentarze
 By ułatwić szytelność kodu stosuje się komentarze. W Pythonie komentarz jednolinowy zapisuje się przez znak # na początku komentowanej linii. Natomiast aby utworzyć komentarz wieloliniowy należy użyć potrónych cudzysłowiów.
 ```Python
 def shout(word):
@@ -43,7 +42,7 @@ def shout(word):
 shout("spam")
 ```
 
-#### Argumenty funkcji
+### Argumenty funkcji
 Argumenty funkcji używane sa jak zmienne w ciele funkcji i nie mogą być użyte poza nią to samo dotyczy amiennych utworzonych wewnątrz funkcji.
 ```Python
 def print_with_exclamation(word):
@@ -70,7 +69,7 @@ def function(var):
 function(7)
 print(var)
 ```
-#### zwracanie wartości z funkcji
+### zwracanie wartości z funkcji
 Pewne funkcje takie jak `int` lub `str` zwracają wartość która może być użyta później. Aby funkcja mogła zwracać wartość musi zawierać słowo kluczowe `return`.
 ```Python
 def max(x, y):
@@ -92,7 +91,7 @@ def add_numbers(x, y):
 
 print(add_numbers(4, 5))
 ```
-#### Funkcje jako obiekty
+### Funkcje jako obiekty
 Chociaż są one tworzone inaczej niż normalne zmienne, funkcje są jak każda inna wartość. Można je przypisywać i nadpisywać do zmiennych, a następnie wywoływać ich nazwy.
 ```Python
 def multiply(x, y):
@@ -104,7 +103,7 @@ operation = multiply
 print(operation(a, b))
 ```
 
-#### Funkcja jako argument innnej funkcji
+### Funkcja jako argument innnej funkcji
 Poniżej przedstawiony został przykład jak do jednej z funkcji jako parametr podac inną funkcję
 ```Python
 def add(x, y):
@@ -118,7 +117,7 @@ b = 10
 print(do_twice(add, a, b))
 ```
 
-#### Moduły
+### Moduły
 ```Python
 import random
 
@@ -145,7 +144,7 @@ W Pythonie występuje 3 główne rodzaje modułów, npaisane przez programistę,
 Wiele z dodatkowych modułów do Pythona znajduje się w PyPI (Python Package Index) aby w prosty sposób móc doinstalowac jakiś moduł który jest potrzebny nalezy wykożystać program zwany `pip`. Aby zainstalowac interesujący moduł wystarczy przejść do wiersza poleceń i wpisac komędę `pip install nazwa_biblioteki`, po jej zainstalowaniu mozna już swobodnie wykożystać jej możliwosci we własnym kodzie.
 
 
-#### błędy
+### Błędy
 Błędy informują użytkownika o tym, że coś poszło nie tak. gdy wykrywany jest błąd program natychmiast się zatrzymuje jednym z częstrzych błędów jest błąd dotyczący dzielenia przez 0 i jest nim `ZeroDevisionError`
 innymi często występującymi błędami są
 `ImportError`
@@ -175,9 +174,8 @@ except:
     print("wykryto błąd")
 ```
 
-# blok finally
-# blok finally umieszcza się z ablokami try i except. Używany jest do wykonania jaiegoś fragmentu kodu bez względu na to
-# czy wystąpi bądź nie wystąpi błąd w fragmęcie kodu w bloku try
+#### Blok finally 
+umieszcza się za blokami `try` i `except`. Używany jest do wykonania jaiegoś fragmentu kodu bez względu na to czy wystąpi bądź nie wystąpi błąd w fragmęcie kodu w bloku `try`
 ```Python
 try:
     print("hello")
