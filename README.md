@@ -1,4 +1,5 @@
 # Język skryptowy lab2
+### Funkcje
 #### Funkcje
 
 Pewne funkcje użyte zostały już we wcześniejszej lekcji była nią np. funkcja `print()`. Były to gotowe funkcje dostarczone wraz z bibliotekami Pythona.
