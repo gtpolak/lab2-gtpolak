@@ -12,7 +12,7 @@ print(list(range(10, 20, 3)))
 ```
 
 Poniżej przedstawiono przykład prostej funkcji jaką można napisac samemu. Każda nowo tworzona funkcja posiada nagłówek zbudowany ze słowa `def` nazwy funkcji oraz przyjmowanych przez nią argumentów umieszczonych w nawiasach. Potem jest oczywiście ciało funkcji wykonujące określone czynności. Funkcję wywołać można przez podanie jej nazwy oraz odpowiednich parametrów jakie przyjmuje. Prosta przykładowa funkcja oraz jej wywołanie zaprezentowano poniżej.
-> Należy pamiętać, że blok kodu w każdej funkcji rozpoczyna się dwukropkiem i jest on wcięty:bangbang:
+> Należy pamiętać, że blok kodu w każdej funkcji rozpoczyna się dwukropkiem i jest on wcięty:exclamation:
 ```Python
 def my_func():
     print("spam")
@@ -30,7 +30,7 @@ def hello():
 ```
 
 ### Komentarze
-By ułatwić szytelność kodu stosuje się komentarze. W Pythonie komentarz jednolinowy zapisuje się przez znak # na początku komentowanej linii. Natomiast aby utworzyć komentarz wieloliniowy należy użyć potrónych cudzysłowiów.
+By ułatwić szytelność kodu stosuje się komentarze. W Pythonie komentarz jednolinowy zapisuje się przez znak `#` na początku komentowanej linii. Natomiast aby utworzyć komentarz wieloliniowy należy użyć potrónych cudzysłowiów.
 ```Python
 def shout(word):
     """
@@ -69,7 +69,7 @@ def function(var):
 function(7)
 print(var)
 ```
-### zwracanie wartości z funkcji
+### Zwracanie wartości z funkcji
 Pewne funkcje takie jak `int` lub `str` zwracają wartość która może być użyta później. Aby funkcja mogła zwracać wartość musi zawierać słowo kluczowe `return`.
 ```Python
 def max(x, y):
@@ -125,7 +125,7 @@ for i in range(5):
     val = random.randint(1, 6)
     print(val)
 ```
-> Aby zaimportowac wszystkie objetky z modułu należy wykożystać  * np from math import *
+> Aby zaimportowac wszystkie objetky z modułu należy wykożystać  * np `from math import *` :exclamation:
 ```Python
 from math import pi
 
@@ -142,7 +142,6 @@ print(square_root(100))
 
 W Pythonie występuje 3 główne rodzaje modułów, npaisane przez programistę, instalowane z dodatkowych źródeł oraz instalowane łącznie z Pythonem. Wywoływane wcześniej moduły znajdują się w standardowych bibliotekach Pythona. Python posiada wiele użytecznych modulów  niektóre z nich umożliwiaja oreacje na stringach, obiektach dat operacje matematyczne, obsługi formatu json, działania na wielu watkach i wiele innych.
 Wiele z dodatkowych modułów do Pythona znajduje się w PyPI (Python Package Index) aby w prosty sposób móc doinstalowac jakiś moduł który jest potrzebny nalezy wykożystać program zwany `pip`. Aby zainstalowac interesujący moduł wystarczy przejść do wiersza poleceń i wpisac komędę `pip install nazwa_biblioteki`, po jej zainstalowaniu mozna już swobodnie wykożystać jej możliwosci we własnym kodzie.
-
 
 ### Błędy
 Błędy informują użytkownika o tym, że coś poszło nie tak. gdy wykrywany jest błąd program natychmiast się zatrzymuje jednym z częstrzych błędów jest błąd dotyczący dzielenia przez 0 i jest nim `ZeroDevisionError`
@@ -186,57 +185,95 @@ finally:
     print("Ta linia kodu wykona się zawsze o bloku try")
 ```
 
-#
-#
-#
-# instrukcja reise
-# instrukacja reise  służy do poprawianai błędów
-# trzeba podać typ zgłąszanego wyjątku
-#
-# print(1)
-# # raise ValueError
-# print(2)
-#
-# name = "123"
-# raise NameError("błędna nazwa")
-# print(name)
+#### Instrukcja reise
+Służy do poprawiania błędów trzeba podać typ zgłąszanego wyjątku
+```Python
+print(1)
+raise ValueError
+print(2)
 
-#
-#
-#
-# asercje
-# asercje są kontrolą stanu jaki powinno się uzyskać po wykonaniu określonego fragmentu kodu
-# testuje ona i jeśli wynik jest fałszywy to jest rzucany wyjątek
+name = "123"
+raise NameError("błędna nazwa")
+print(name)
+```
+
+#### Asercje
+Asercje są kontrolą stanu jaki powinno się uzyskać po wykonaniu określonego fragmentu kodu testuje ona i jeśli wynik jest fałszywy to jest rzucany wyjątek
+```Python
 print(1)
 assert 2 + 2 == 4
 print(2)
-# assert 1 + 1 == 3
-# asercje mogą równiez przyjmowac drugi argument  kóry jest przekazywany jeśli assercja zawiedzie
-
+assert 1 + 1 == 3
+```
+Asercje mogą również przyjmować drugi argument kóry jest przekazywany jeśli assercja zawiedzie
+```Python
 temp = -10
-assert temp >= 0, "niej niż 0"
+assert temp >= 0, "mniej niż 0"
+```
 
-# ramka
-# gdy asercj się nie wykona poprawnie można wyłapać jej błąd używając bloku try
-# except jeśli to nie będzie zrobione program sie zatrzyma
+> Gdy asercja się nie wykona poprawnie można wyłapać jej błąd używając bloku `try except` jeśli to nie będzie zrobione program sie zatrzyma:exclamation:
 
-# otwieranie plików
-# operaje na plikach w pythonie
-# przed edycją pliku potrzeba go otworzyć przy pomocy poniższego polecenia
+### Otwieranie plików
+Operaje na plikach w Pythonie przed edycją pliku potrzeba go otworzyć przy pomocy poniższego polecenia
+```Python
 myfile = open("spam.txt")
-# rama
-# argumentem funkcji open jest ścieżka do pliku. Jeśli plik znajduje sie w katalogu projektu wystarczy wpisac jego nazwę
+```
+> Argumentem funkcji open jest ścieżką do pliku. Jeśli plik znajduje sie w katalogu projektu wystarczy wpisac jego nazwę :exclamation:
 
-# pliki można otwierać i przetwarzać w róznych trybach. Tryb ustawia się przez podanie go jako drugi argument funkcji open
-# podanie r umozliwiać będzie otwarce pliku w trybie tylko do odczytu co zresztą jest trybem domyślnym
-# w zapewnia tryb zapisu zawartości pliku (nadpisuje wcześniejszą zawartość)
-# a zapewnia możliwość dopisywania do pliku bez utraty wcześniejszej jego zawartości
-# b otwira plik w trybie binarnym używane do plików innych niz tekstowe np obrazy, dźwięk itp !!!!!!!!!!
+Pliki można otwierać i przetwarzać w róznych trybach. Tryb ustawia się przez podanie go jako drugi argument funkcji `open` podanie `r` umożliwiać będzie otwarcie pliku w trybie tylko do odczytu co zresztą jest trybem domyślnym.
+
+Parametr | Opis
+-------- | ---------
+w | zapewnia tryb zapisu zawartości pliku (nadpisuje wcześniejszą zawartość lub tworzy plik gdy nie istnieje)
+a | zapewnia możliwość dopisywania do pliku bez utraty wcześniejszej jego zawartości
+b | otwira plik w trybie binarnym używane do plików innych niz tekstowe np obrazy, dźwięk itp 
+```Python
 myfile = open("spam.txt", "w")
 myfile = open("spam.txt", "r")
 myfile = open("spam.txt", "wb")
+```
+Odczytywanie pliku umożliwia metoda `read`. Po wykonaniu operacji na pliku obowiązkową czynnością będzie jego zmaknięcie przy pomocy wywołania metody `close` wywołanej na rzecz obiektu pliku.
+```Python
+file = open("filename.txt", "r")
+cont = file.read()
+print(cont)
+file.close()
+```
 
-# tablice
+Do odczytywania można użyć metody `read` wraz z parametrem który informuje o tym ile bitów powinna być odczytana. Metoda ta możne być wykonywana kilka razy z kolei dla tego samego obiektu pliku, w celu odczytania z pliku bit po bicie. Wywłołanie metody `read` bez argumentu odczyta pozostałe bity plików. Gdy zawartość pliku zostanie odczytana w całości kolejna próba odczytania zwróci pusty ciąg znaków.
+```Python
+file = open("filename.txt", "r")
+print(file.read(10))
+print(file.read(5))
+print(file.read(6))
+print(file.read())
+file.close()
+```
+Do adczytania poszczególnych linii z pliku wykożystuje się metodę `readlines` która zwraca listę w której każdy element jest linią z odczytanego pliku.
+```Python
+file = open("filename.txt", "r")
+print(file.readlines())
+file.close()
+```
+Do odczytu z pliku linia po linii można równiez wykożystać pętlę `for` 
+```Python
+file = open("filename.txt", "r")
+for line in file:
+    print(line)
+file.close()
+```
+#### Zapisywanie plików
+Do zapisywania plików wykorzystuję sie metodę `write` zapisuje ona ciągi znaków do pliku.
+```Python
+file = open("newFile.txt", "w")
+file.write("Ten tekst zostanie zapisany do pliku")
+file.close()
+```
+Gdy plik otworzony jest w trybie zapisu istniejąca zawartość pliku zostanie usunięta.
+
+
+>:exclamation:
+### Tablice
 
 
 
