@@ -319,7 +319,7 @@ with open("filename.txt") as f:
 
 :two: Napisz funkcję _lotto_, która do zwracanej listy wpisze 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
 
-:three: Stworzony na poprzednich zajęciach kalkulator edytuj tak aby wykorzystywał on funkcję do obliczania wybranych przez użytkownika działań (funkcje przyjmują po 2 parametry i zwracają wynik obliczeń.
+:three: Stworzony na poprzednich zajęciach kalkulator edytuj tak aby wykorzystywał on funkcję do obliczania wybranych przez użytkownika działań (funkcje przyjmują po 2 parametry i zwracają wynik obliczeń).
 
 :four: Do kalkulatora dopisz możliwość obliczania pola/obwodu koła. (do wzoru wykorzystaj zaimportowaną wartość liczby Pi).
 
@@ -329,4 +329,5 @@ with open("filename.txt") as f:
 
 :seven: Napisz funkcję wyznaczającą rozwiązania równania kwadratowego. Funkcja przyjmuje 3 parametry _a, b, c_ i rozwiązania zapisuje do pliku _result.txt_
 
+## :exclamation: zadania 2-7 mają zostać dodane na GitHuba :exclamation:
 ![Python](https://images83.fotosik.pl/1020/9da31fa7019491a2.jpg)
