@@ -329,4 +329,4 @@ with open("filename.txt") as f:
 
 :seven: Napisz funkcję wyznaczającą rozwiązania równania kwadratowego. Funkcja przyjmuje 3 parametry _a, b, c_ i rozwiązania zapisuje do pliku _result.txt_
 
-![Python](http://s8964.chomikuj.pl/ChomikImage.aspx?e=ZKPDb4NQKnxFhadKrrO41t-2GEgajUE2ePRaHZJ7I-4TtgAYMB2gY4PQbcEmbJoXN9v-fHkj3DBpsMV6yZ7vswhsJd7KCjE_kfrQn_g8N9o&pv=2)
+![Python](https://images83.fotosik.pl/1020/9da31fa7019491a2.jpg)
