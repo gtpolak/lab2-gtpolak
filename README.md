@@ -1,4 +1,5 @@
 # Język skryptowy lab2
+
 ### Funkcje
 
 Pewne funkcje użyte zostały już we wcześniejszej lekcji była nią np. funkcja `print()`. Były to gotowe funkcje dostarczone wraz z bibliotekami Pythona.
@@ -131,7 +132,7 @@ from math import pi
 
 print(pi)
 ```
-Jeśli wystąpi próba impotu modułu który nie jest dostępny np. `import dowolny_modul` generowany jest wyjątek ImportError 
+Jeśli wystąpi próba impotu modułu który nie jest dostępny np. `import dowolny_modul` generowany jest wyjątek `ImportError`
 
 Imortowane moduły lub wybrane obiekty w nich zawarte można używać pod inną nazwą porzy pomocy definiowania dla nich słów kluczowych przy użyciu operatora `as`
 ```Python
@@ -145,15 +146,21 @@ Wiele z dodatkowych modułów do Pythona znajduje się w PyPI (Python Package In
 
 ### Błędy
 Błędy informują użytkownika o tym, że coś poszło nie tak. gdy wykrywany jest błąd program natychmiast się zatrzymuje jednym z częstrzych błędów jest błąd dotyczący dzielenia przez 0 i jest nim `ZeroDevisionError`
-innymi często występującymi błędami są
-`ImportError`
-`IndexError`
-`NameError`
-`SyntaxError`
-`TypeError`
-`ValueError`
+Innymi często występującymi błędami są:
 
-W celu obsługi wyjątku który może wystąpić wykorzystuje się instrukcje `try/except`. Blok `try` może mieć wiele różnych bloków `except` aby wyłapywać różne rodzaje błędów. Różne rodzaje błędów mogą być także umieszczone w jednym bloku except aby wyłapywać wszystkie z nich.
+:small_blue_diamond:`ImportError`
+
+:small_blue_diamond:`IndexError`
+
+:small_blue_diamond:`NameError`
+
+:small_blue_diamond:`SyntaxError`
+
+:small_blue_diamond:`TypeError`
+
+:small_blue_diamond:`ValueError`
+
+W celu obsługi wyjątku który może wystąpić wykorzystuje się instrukcje `try/except`. Blok `try` może mieć wiele różnych bloków `except` aby wyłapywać różne rodzaje błędów. Różne rodzaje błędów mogą być także umieszczone w jednym bloku `except` aby wyłapywać wszystkie z nich.
 ```Python
 try:
     var = 100
@@ -164,7 +171,7 @@ except ZeroDivisionError:
 except (ValueError, TypeError):
     print("jakiś błąd")
 ```
-Możliwy jest też zapis bloku exception bez informacji o jkaimkolwiek konkretnym błędzie można w ten sposób przechwycić wszystkie błędy jakie mogą wystąpić i wykonać dla nich tę samą akcję.
+Możliwy jest też zapis bloku `exception` bez informacji o jkaimkolwiek konkretnym błędzie można w ten sposób przechwycić wszystkie błędy jakie mogą wystąpić i wykonać dla nich tę samą akcję.
 ```Python
 try:
     word = "spam"
@@ -240,7 +247,7 @@ print(cont)
 file.close()
 ```
 
-Do odczytywania można użyć metody `read` wraz z parametrem który informuje o tym ile bitów powinna być odczytana. Metoda ta możne być wykonywana kilka razy z kolei dla tego samego obiektu pliku, w celu odczytania z pliku bit po bicie. Wywłołanie metody `read` bez argumentu odczyta pozostałe bity plików. Gdy zawartość pliku zostanie odczytana w całości kolejna próba odczytania zwróci pusty ciąg znaków.
+Do odczytywania można użyć metody `read` wraz z parametrem który informuje o tym ile bajtów powinna być odczytana. Metoda ta możne być wykonywana kilka razy z kolei dla tego samego obiektu pliku, w celu odczytania z pliku bajt po bajcie. Wywłołanie metody `read` bez argumentu odczyta pozostałe bajty pliku. Gdy zawartość pliku zostanie odczytana w całości kolejna próba odczytania zwróci pusty ciąg znaków.
 ```Python
 file = open("filename.txt", "r")
 print(file.read(10))
@@ -249,7 +256,7 @@ print(file.read(6))
 print(file.read())
 file.close()
 ```
-Do adczytania poszczególnych linii z pliku wykożystuje się metodę `readlines` która zwraca listę w której każdy element jest linią z odczytanego pliku.
+Do odczytania poszczególnych linii z pliku wykożystuje się metodę `readlines` która zwraca listę w której każdy element jest linią z odczytanego pliku.
 ```Python
 file = open("filename.txt", "r")
 print(file.readlines())
@@ -269,44 +276,57 @@ file = open("newFile.txt", "w")
 file.write("Ten tekst zostanie zapisany do pliku")
 file.close()
 ```
-Gdy plik otworzony jest w trybie zapisu istniejąca zawartość pliku zostanie usunięta.
+Gdy plik otworzony jest w trybie zapisu istniejąca zawartość pliku zostanie usunięta co pokazuje poniższy fragment kodu.
+```Python 
+file = open("newFile2.txt", "r")
+print("Odczyt zawartości domyślnej")
+print(file.read())
+print("Koniec")
+file.close()
 
+file = open("newFile2.txt", "w")
+print(file.write("Jakiś tekst"))
+file.close()
 
->:exclamation:
-### Tablice
+file = open("newFile2.txt", "r")
+print("Odczyt zawartości domyślnej")
+print(file.read())
+print("Koniec")
+file.close()
+```
+Jak można zauważyć metoda zapisująca informacje do pliku zwraca ilośc zapisanych bajtów do pliku jeśli zapis się powiedzie.
 
+Dobrą praktyką aby uniknąć marnowania zasobów jest upewnienie się, że pliki zostaną zamknięte po ich użyciu. Jednym ze sposobów na to jest użycie bloków `try` i `finally`.
+```Python
+try:
+    f = open("fileName.txt")
+    print(f.read())
+finally:
+    f.close()
+```
+> To zapewnia, że plik jest zawsze zamknięty, nawet jeśli wystąpi błąd:exclamation:
 
+Alternatywą w pracy z plikiem jest użycie oeratora `with`. Tworzy on tymczasową zmienną która jest dostępna wyłącznie na poziomie wcziętego bloku instrukcji `with`.
+```Python
+with open("filename.txt") as f:
+    print(f.read())
+```
 
+> Plik zostanie automatycznie zamknięty po wyjścou z bloku `with` nawet jeśli błędy pojawią się w trakcie jego wykonywania:exclamation:
 
+## Zadania do wykonania
+:one: Wypróbuj kod z _listingów_ znajdujących się w instrukcji i sprawdź ich działanie.
 
+:two: Napisz funkcję _lotto_, która do zwracanej listy wpisze 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
 
-*This text will be italic*
-_This will also be italic_
+:three: Stworzony na poprzednich zajęciach kalkulator edytuj tak aby wykożystywał on funkcję do obliczania wybranych przez użytkownika działań (funkcje przyjmują po 2 parametry i zwracają wynik obliczeń.
 
-**This text will be bold**
-__This will also be bold__
+:four: Do kalkulatora dopisz możliwość obliczania pola/obwodu koła. (do wzoru wykożystaj zimportowaną wartość liczby Pi).
 
-_You **can** combine them_
+:five: Napisz funkcję która sumuje liczby z listy podanej jako parametr i podaj ją (tą funkcję) jako parametr do innej funkcji która odczyta liczby znajdujące sięw pliku każda w nowej linii. 
 
-![GitHub Logo](https://qph.fs.quoracdn.net/main-qimg-a1b88cb3f8232c96214d7d5b9d479ab8-)
+:six: Do kalkulatora dopisz funkcję która umożliwi użytkownikowi zapis działań oraz wyniku dla obliczenia pola/obwodu okręgu do pliku tekstowego.
 
-> We're living the future so the present is our past.
+:seven: Napisz funkcję wyznaczającą rozwiązania równania kwadratowego. Funkcja przyjmuje 3 parametry _a, b, c_ i rozwiązania zapisuje do pliku _result.txt_
 
-    def foo():
-        if not bar:
-        return True
-        
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
-
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
-:small_blue_diamond:
-:bangbang:
-
-
+![Python](http://s8964.chomikuj.pl/ChomikImage.aspx?e=Ir7TXZ7LBgxzijkICiSnFpdNlCtaa2fuxGkie29OBbeUTqiFCmojZ-p-jS5jaXfiqYlLK4Jxk2D7yRHSXVvBpjipbjNV59B_xAB1dzp79XQ&pv=2)
