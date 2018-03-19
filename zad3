@@ -1,0 +1,43 @@
+# Zadanie 3
+__author__ = 'student'
+liczbaA = float(input("podaj liczbe:"))
+print("dostepne dzialania:\n"
+      "+ dodawanie\n"
+      "- odejmowanie\n"
+      "* mnożenie\n"
+      "/ dzielenie\n"
+      "^ potegowanie\n")
+dzialanie = input("wybierz dzialanie:")
+liczbaB = float(input("podaj liczbe:"))
+
+def dodawanie(liczbaA, liczbaB):
+     suma = liczbaA + liczbaB
+     return suma
+
+def odejmowanie(liczbaA, liczbaB):
+     odejmowanie = liczbaA - liczbaB
+     return odejmowanie
+
+def mnożenie(liczbaA, liczbaB):
+     mnozenie = liczbaA * liczbaB
+     return mnozenie
+
+def dzielenie(liczbaA, liczbaB):
+     dzielenie = liczbaA / liczbaB
+     return dzielenie
+
+def potegowanie(liczbaA, liczbaB):
+     potega = liczbaA ** liczbaB
+     return potega
+
+
+if dzialanie == "+":
+    print("wynik: ", dodawanie(liczbaA, liczbaB))
+elif dzialanie == "-":
+    print("wynik: ", odejmowanie(liczbaA, liczbaB))
+elif dzialanie == "*":
+    print("wynik: ", mnożenie(liczbaA, liczbaB))
+elif dzialanie == "/":
+    print("wynik: ", dzielenie(liczbaA, liczbaB))
+elif dzialanie == "^":
+    print("wynik: ", potegowanie(liczbaA, liczbaB))
