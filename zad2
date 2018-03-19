@@ -1,0 +1,7 @@
+__author__ = 'student'
+import random
+
+def lotto():
+        a = random.sample(range(1, 49),6)
+        print(a)
+lotto()
