@@ -1,0 +1,55 @@
+from math import pi
+def dodawanie(a,b):
+    return a+b
+def odejmowanie(a,b):
+    return a-b
+def mnozenie(a,b):
+    return a*b
+def dzielenie(a,b):
+    return a/b
+def potegowanie(a,b):
+    return a**b
+def poleKola(r):
+    return pi*r**2
+def obwKola(r):
+    return 2*pi*r
+
+def twoargs():
+    global liczbaA
+    liczbaA = float(input("podaj liczbe:"))
+    global liczbaB
+    liczbaB = float(input("podaj liczbe:"))
+def onearg():
+    global r
+    r = float(input("podaj liczbe:"))
+print("dostepne dzialania:\n"
+      "+ dodawanie\n"
+      "- odejmowanie\n"
+      "* mnożenie\n"
+      "/ dzielenie\n"
+      "^ potegowanie\n"
+      "pk pole koła\n"
+      "ob obwód koła\n")
+dzialanie = input("wybierz dzialanie:")
+
+if dzialanie == "+":
+    twoargs()
+    print(dodawanie(liczbaA,liczbaB))
+elif dzialanie == "-":
+    twoargs()
+    print(odejmowanie(liczbaA,liczbaB))
+elif dzialanie == "*":
+    twoargs()
+    print(mnozenie(liczbaA,liczbaB))
+elif dzialanie == "/":
+    twoargs()
+    print(dzielenie(liczbaA,liczbaB))
+elif dzialanie == "^":
+    twoargs()
+    print(potegowanie(liczbaA,liczbaB))
+elif dzialanie == "pk":
+    onearg()
+    print(poleKola(r))
+elif dzialanie == "ob":
+    onearg()
+    print(obwKola(r))
