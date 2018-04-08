@@ -1,0 +1,31 @@
+def dodawanie(a,b):
+    return a+b
+def odejmowanie(a,b):
+    return a-b
+def mnozenie(a,b):
+    return a*b
+def dzielenie(a,b):
+    return a/b
+def potegowanie(a,b):
+    return a**b
+
+liczbaA = float(input("podaj liczbe:"))
+print("dostepne dzialania:\n"
+      "+ dodawanie\n"
+      "- odejmowanie\n"
+      "* mnożenie\n"
+      "/ dzielenie\n"
+      "^ potegowanie\n")
+dzialanie = input("wybierz dzialanie:")
+liczbaB = float(input("podaj liczbe:"))
+
+if dzialanie == "+":
+    print(dodawanie(liczbaA,liczbaB))
+elif dzialanie == "-":
+    print(odejmowanie(liczbaA,liczbaB))
+elif dzialanie == "*":
+    print(mnozenie(liczbaA,liczbaB))
+elif dzialanie == "/":
+    print(dzielenie(liczbaA,liczbaB))
+elif dzialanie == "^":
+    print(potegowanie(liczbaA,liczbaB))
