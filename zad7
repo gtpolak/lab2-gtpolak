@@ -1,0 +1,20 @@
+def equation(a, b, c):
+    delta = b**2-4*a*c
+    try:
+        file = open("result.txt","w")
+        if delta>0:
+            x1= -b - sqrt(delta)/2 * a
+            x2= -b + sqrt(delta)/2 * a
+            file.write("x1 = "+x1+"\t x2 = "+x2)
+            return x1, x2
+        elif delta == 0:
+            x = -b/2 * a
+            file.write("x ="+x)
+            return x
+        elif delta<0:
+            file.write("brak miejsc zerowych")
+            return "brak miejsc zerowych"
+    finally:
+        file.close()
+
+print(equation(4,3,1))
