@@ -1,0 +1,12 @@
+def sumfunction(list):
+    return sum(list)
+
+def readfunction(path):
+    file = open(path)
+    list = []
+    for line in file:
+        list.append(float(line))
+    file.close()
+    return list
+
+print(sumfunction(readfunction("file.txt")))
